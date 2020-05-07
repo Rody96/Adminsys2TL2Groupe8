@@ -2,10 +2,11 @@
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-RUN apt-get install -y apache2
+#RUN apt-get install -y apache2
+RUN yum -y install httpd
 
-#COPY public-html /usr/local/apache2/htdocs
+COPY ./public/index.html /var/www/html/
 
-EXPOSE 8080:80
+EXPOSE 80
 
-CMD ["-DFOREGROUND"]
+CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
