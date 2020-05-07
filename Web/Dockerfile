@@ -6,6 +6,6 @@ RUN apt-get install -y apache2
 
 #COPY public-html /usr/local/apache2/htdocs
 
-EXPOSE 80
+EXPOSE 8080:80
 
-CMD ["-D","FOREGROUND"]
+CMD ["-DFOREGROUND"]
