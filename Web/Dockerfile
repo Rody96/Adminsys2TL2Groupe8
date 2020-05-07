@@ -8,4 +8,4 @@ RUN apt-get install -y apache2
 
 EXPOSE 80
 
-CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
+CMD ["-DFOREGROUND"]
