@@ -2,8 +2,7 @@
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-#RUN apt-get install -y apache2
-RUN yum -y install httpd
+RUN apt-get install -y apache2
 
 COPY ./public/index.html /var/www/html/
 
