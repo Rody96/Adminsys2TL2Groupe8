@@ -4,7 +4,7 @@ RUN apt update && apt upgrade -y && DEBIAN_FRONTEND=noninteractive apt install -
 
 RUN mkdir /var/www/test.mugisha.ephec-ti.be
 
-COPY www/test.html /var/www/mugisha.ephec-ti.be/index.html
+COPY www/test.html /var/www/test.mugisha.ephec-ti.be/index.html
 
 EXPOSE 80
 
