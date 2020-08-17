@@ -1,11 +1,11 @@
 ﻿FROM ubuntu:latest
 
-RUN apt-get update
-RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-RUN apt-get install -y apache2
+RUN apt update && apt upgrade -y && DEBIAN_FRONTEND=noninteractive apt install -y apache2 php php-mysql nano 
 
-#COPY index.html /var/www/html/
+RUN mkdir /var/www/test.mugisha.ephec-ti.be
+
+COPY www/test.html /var/www/mugisha.ephec-ti.be/index.html
 
 EXPOSE 80
 
-CMD ["apache2ctl","-DFOREGROUND"]
+CMD apachectl -DFOREGROUND
