@@ -1,4 +1,7 @@
 ﻿FROM ubuntu:latest
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Paris
+RUN apt-get install -y tzdata
 RUN apt-get update -y
 RUN apt-get install -y \apache2 \nano
 RUN apt-get install -y apache2-utils
