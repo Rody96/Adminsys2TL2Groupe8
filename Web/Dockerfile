@@ -4,7 +4,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update -y
 RUN apt-get install -y \apache2 \nano
 RUN apt-get install -y apache2-utils
-ADD ./woodytoysweb.conf /etc/apache2/sites-available
+COPY woodytoysweb.conf /etc/apache2/sites-available
 RUN mkdir /var/www/mugisha.ephec-ti.be
 ADD b2b /var/www/mugisha.ephec-ti.be/b2b
 ADD www /var/www/mugisha.ephec-ti.be/www
