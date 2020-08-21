@@ -1,0 +1,4 @@
+﻿zone "mugisha.ephec-ti.be" {
+    type master;
+    file "/etc/bind/zones/db.mugisha.ephec-ti.be";
+};
