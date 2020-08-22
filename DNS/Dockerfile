@@ -2,8 +2,8 @@ FROM ubuntu:latest
 RUN apt-get update -y
 RUN apt-get install -y \bind9 \nano
 
-ADD * /home/
-ADD DNS/db.mugisha.ephec-ti.be /etc/bind/zones
+COPY * /home/
+COPY DNS/db.mugisha.ephec-ti.be /etc/bind/zones
 
 RUN cat /home/hosts > /etc/hosts \
 	&& cat /home/named.conf.local > /etc/bind/named.conf.local \
