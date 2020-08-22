@@ -1,16 +1,16 @@
-FROM ubuntu:latest
-RUN apt-get update -y
-RUN apt-get install -y \bind9 \nano
+FROM ubuntu:bionic
 
-COPY * /home/
-COPY DNS/db.mugisha.ephec-ti.be /etc/bind/zones
+RUN apt-get update \
+  && apt-get install -y \
+  bind9 \
+  bind9utils \
+  bind9-doc
 
-RUN cat /home/hosts > /etc/hosts \
-	&& cat /home/named.conf.local > /etc/bind/named.conf.local \
-	&& cat /home/named.conf.options > /etc/bind/named.conf.options 
-    
-    
-EXPOSE 53/udp 53/tcp
+RUN sed -i 's/OPTIONS=.*/OPTIONS="-4 -u bind"/' /etc/default/bind9
+
+COPY named.conf.options /etc/bind/
+COPY named.conf.local /etc/bind/
+COPY DNS/db.mugisha.ephec-ti.be /etc/bind/zones/
 
 
 CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
