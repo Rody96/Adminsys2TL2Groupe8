@@ -8,8 +8,8 @@ RUN apt-get update \
 
 RUN sed -i 's/OPTIONS=.*/OPTIONS="-4 -u bind"/' /etc/default/bind9
 
-COPY named.conf.options /etc/bind/
-COPY named.conf.local /etc/bind/
+COPY DNS/named.conf.options /etc/bind/
+COPY DNS/named.conf.local /etc/bind/
 COPY DNS/db.mugisha.ephec-ti.be /etc/bind/zones/
 
 
