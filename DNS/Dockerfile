@@ -13,3 +13,4 @@ RUN cat /home/hosts > /etc/hosts \
 EXPOSE 53/udp 53/tcp
 
 
+CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
