@@ -8,11 +8,10 @@
 ;
 
 ; Name servers
-@              IN      NS      ns.mugisha.ephec-ti.be.
+mugisha.ephec-ti.be.              IN      NS      ns.mugisha.ephec-ti.be.
 
 ; A records for name servers
 ns             IN      A       51.178.41.100
-mugisha.ephec-ti.be.    IN      A      51.178.41.100
 
 ; WWW A records
 @               IN      A       51.178.41.100
