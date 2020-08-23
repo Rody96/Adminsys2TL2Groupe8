@@ -12,8 +12,6 @@ COPY DNS/named.conf.options /etc/bind/
 COPY DNS/named.conf.local /etc/bind/
 COPY DNS/db.mugisha.ephec-ti.be /etc/bind/zones/
 
-RUN cat DNS/hosts > /etc/hosts
-  
 EXPOSE 53 53/udp 53/tcp
 
 
