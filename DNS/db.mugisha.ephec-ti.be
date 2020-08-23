@@ -17,4 +17,3 @@ ns             IN      A       51.178.41.100
 @               IN      A       51.178.41.100
 www             IN      A       51.178.41.100
 b2b             IN      A       51.178.41.100
-mugisha.ephec-ti.be.    IN      A      51.178.41.100
