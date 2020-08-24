@@ -12,7 +12,12 @@ COPY DNS/named.conf.options /etc/bind/
 COPY DNS/named.conf.local /etc/bind/
 COPY DNS/db.mugisha.ephec-ti.be /etc/bind/zones/
 
+WORKDIR /etc/bind
+
+VOLUME /etc/bind
+
 EXPOSE 53 53/udp 53/tcp
 
 
-CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
+#CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
+CMD ["/usr/sbin/named", "-g", "-c", "/etc/bind/named.conf", "-u", "bind"]
