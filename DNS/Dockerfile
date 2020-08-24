@@ -20,4 +20,4 @@ EXPOSE 53 53/udp 53/tcp
 
 
 #CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
-CMD ["/usr/sbin/named"]
+CMD ["/usr/sbin/named", "-g", "-c", "/etc/bind/named.conf", "-u", "bind"]
