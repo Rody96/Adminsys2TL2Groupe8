@@ -1,20 +1,16 @@
-FROM ubuntu
+FROM ubuntu:latest
 
-RUN apt-get update \
-  && apt-get install -y \
-  bind9 \
-  bind9utils \
-  bind9-doc
+RUN apt-get update && apt-get install -y bind9
 
-#RUN sed -i 's/OPTIONS=.*/OPTIONS="-4 -u bind"/' /etc/default/bind9
+WORKDIR /etc/bind
+VOLUME ["/etc/bind"]
 
-COPY DNS/named.conf.options /etc/bind/
-COPY DNS/named.conf.local /etc/bind/
-COPY DNS/db.mugisha.ephec-ti.be /etc/bind/zones/
-
-EXPOSE 53/udp 53/tcp
+COPY /configuration/named.conf /etc/bind/named.conf
+COPY /configuration/named.conf.options /etc/bind/named.conf.options
+COPY /configuration/named.conf.default-zones /etc/bind/named.conf.default-zones
+COPY /configuration/named.conf.local /etc/bind/named.conf.local
+COPY /configuration/db.mugisha.ephec-ti.be /etc/bind/db.wt13.ephec-ti.be
 
 
-CMD ["/usr/sbin/named"]
-
-#CMD ["/usr/sbin/named", "-f", "-c", "/etc/bind/named.conf"]
+EXPOSE 53 53/udp
+CMD ["/usr/sbin/named", "-g", "-c", "/etc/bind/named.conf", "-u", "bind"]
