@@ -1,10 +1,7 @@
-﻿acl internals {
-  51.178.41.100
-  127.0.0.1;
-};
-
+﻿
 view external {
     match-clients { any; };
+    allow-transfer {"none";};
     zone "wt13.ephec-ti.be" {
         type master;
         file "/etc/bind/db.wt13.ephec-ti.be";

@@ -1,5 +1,5 @@
 ﻿$ORIGIN mugisha.ephec-ti.be.
-$TTL	43200
+$TTL	604800
 @	IN	SOA	ns.mugisha.ephec-ti.be. admin.mugisha.ephec-ti.be. (
 		 	     1  	; Serial
 			 43200		; Refresh
