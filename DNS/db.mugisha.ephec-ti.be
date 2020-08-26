@@ -6,15 +6,17 @@ $TTL	604800
 			  7200		; Retry
 			2419200		; Expire
 			  43200 )	; Negative Cache TTL
+        
 ;
+
 ; name servers - NS record
 @					IN	NS	ns.mugisha.ephec-ti.be.
-@               			IN      A       51.178.41.100
+
 
 ; name servers - A record
 ns 				    	IN	A	51.178.41.100
 
 ; web services
-serverWeb				IN	A	51.178.41.100
-www				    	IN	CNAME	serverWeb
-b2b IN CNAME serverWeb
+server				IN	A	51.178.41.100
+www				    	IN	CNAME	server
+b2b IN CNAME server

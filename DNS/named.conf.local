@@ -2,8 +2,8 @@
 view external {
     match-clients { any; };
     allow-transfer {"none";};
-    zone "wt13.ephec-ti.be" {
+    zone "mugisha.ephec-ti.be" {
         type master;
-        file "/etc/bind/db.wt13.ephec-ti.be";
+        file "/etc/bind/db.mugisha.ephec-ti.be";
     };
 };
