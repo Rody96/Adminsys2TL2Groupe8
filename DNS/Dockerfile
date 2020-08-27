@@ -14,3 +14,5 @@ COPY DNS/db.mugisha.ephec-ti.be /etc/bind
 WORKDIR /etc/bind
 
 VOLUME /etc/bind
+
+CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
