@@ -1,5 +1,4 @@
-﻿
-view external {
+﻿view external {
     match-clients { any; };
     allow-transfer {"none";};
     zone "mugisha.ephec-ti.be" {
