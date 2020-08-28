@@ -17,6 +17,6 @@ $TTL	604800
 ns 				    	IN	A	51.178.41.100
 
 ; web services
-server				IN	A	51.178.41.100
+@				IN	A	51.178.41.100
 www				    	IN	CNAME	server
 b2b IN CNAME server
