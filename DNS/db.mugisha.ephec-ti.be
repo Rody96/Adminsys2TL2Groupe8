@@ -1,12 +1,12 @@
 ﻿$ORIGIN mugisha.ephec-ti.be.
 $TTL	604800
 @	IN	SOA	ns.mugisha.ephec-ti.be. admin.mugisha.ephec-ti.be. (
-		 	     1  	; Serial
-			 43200		; Refresh
-			  7200		; Retry
-			2419200		; Expire
-			  43200 )	; Negative Cache TTL
-        
+1  	; Serial
+43200		; Refresh
+7200		; Retry
+2419200		; Expire
+43200 )	; Negative Cache TTL
+
 ;
 
 ; name servers - NS record
